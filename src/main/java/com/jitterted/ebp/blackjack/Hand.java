@@ -40,10 +40,6 @@ public class Hand {
         return value() <= 16;
     }
 
-    void display() {
-        System.out.println(ConsoleHand.cardsAsString(this));
-    }
-
     public List<Card> cards() {
         return List.copyOf(cards);
     }

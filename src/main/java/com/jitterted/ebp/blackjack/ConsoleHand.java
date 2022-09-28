@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import static org.fusesource.jansi.Ansi.ansi;
 
 public class ConsoleHand {
+
     static String displayFaceUpCard(Hand hand) {
         return ConsoleCard.display(hand.faceUpCard());
     }
