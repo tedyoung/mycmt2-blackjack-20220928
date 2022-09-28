@@ -44,10 +44,14 @@ public class Hand {
     }
 
     void display() {
-        System.out.println(cards.stream()
-                                .map(ConsoleCard::display)
-                                .collect(Collectors.joining(
-                                        ansi().cursorUp(6).cursorRight(1).toString())));
+        System.out.println(cardsAsString());
+    }
+
+    public String cardsAsString() {
+        return cards.stream()
+                    .map(ConsoleCard::display)
+                    .collect(Collectors.joining(
+                            ansi().cursorUp(6).cursorRight(1).toString()));
     }
 
     public void drawFrom(Deck deck) {
