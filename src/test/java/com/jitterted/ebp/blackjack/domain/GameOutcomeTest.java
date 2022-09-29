@@ -17,4 +17,15 @@ class GameOutcomeTest {
                 .isEqualTo("You Busted, so you lose.  💸");
     }
 
+    @Test
+    public void playerDealtBetterHandThanDealerAndStandsThenPlayerBeatsDealer() throws Exception {
+        Game game = new Game(StubDeck.playerStandsAndBeatsDealer());
+        game.initialDeal();
+
+        game.playerStands();
+
+        assertThat(game.determineOutcome())
+                .isEqualTo("You beat the Dealer! 💵");
+    }
+
 }
