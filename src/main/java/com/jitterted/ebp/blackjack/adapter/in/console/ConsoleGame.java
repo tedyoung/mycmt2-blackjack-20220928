@@ -12,6 +12,8 @@ public class ConsoleGame {
 
     private final Game game;
 
+    // Caveat: ADAPTERS should not have references to concrete ENTITIES
+    // instead would have reference to APPLICATION SERVICE (e.g., GameService)
     public ConsoleGame(Game game) {
         this.game = game;
     }

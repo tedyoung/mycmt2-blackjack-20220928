@@ -9,8 +9,8 @@ public class Game {
 
     private boolean playerDone = false;
 
-    public Game() {
-        deck = new Deck();
+    public Game(Deck deck) {
+        this.deck = deck;
     }
 
     public void initialDeal() {
@@ -24,6 +24,7 @@ public class Game {
         dealerHand.drawFrom(deck);
     }
 
+    // String here is suspect: may be violating separation of concerns (and in fact, it does)
     public String determineOutcome() {
         if (playerHand.isBusted()) {
             return "You Busted, so you lose.  💸";
