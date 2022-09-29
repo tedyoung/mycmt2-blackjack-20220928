@@ -24,7 +24,6 @@ public class Game {
         dealerHand.drawFrom(deck);
     }
 
-    // String here is suspect: may be violating separation of concerns (and in fact, it does)
     public GameOutcome determineOutcome() {
         if (playerHand.isBusted()) {
             return GameOutcome.PLAYER_BUSTED;

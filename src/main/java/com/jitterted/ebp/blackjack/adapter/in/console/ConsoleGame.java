@@ -30,7 +30,7 @@ public class ConsoleGame {
 
         displayFinalGameState();
 
-        System.out.println(game.determineOutcome());
+        System.out.println(game.determineOutcome().displayString());
 
         resetScreen();
     }
