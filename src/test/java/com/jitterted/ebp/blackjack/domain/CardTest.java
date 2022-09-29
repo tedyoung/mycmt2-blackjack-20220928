@@ -1,5 +1,6 @@
-package com.jitterted.ebp.blackjack;
+package com.jitterted.ebp.blackjack.domain;
 
+import com.jitterted.ebp.blackjack.adapter.in.console.ConsoleCard;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
