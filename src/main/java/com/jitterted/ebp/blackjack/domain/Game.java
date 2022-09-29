@@ -25,17 +25,17 @@ public class Game {
     }
 
     // String here is suspect: may be violating separation of concerns (and in fact, it does)
-    public String determineOutcome() {
+    public GameOutcome determineOutcome() {
         if (playerHand.isBusted()) {
-            return "You Busted, so you lose.  💸";
+            return GameOutcome.PLAYER_BUSTED;
         } else if (dealerHand.isBusted()) {
-            return "Dealer went BUST, Player wins! Yay for you!! 💵";
+            return GameOutcome.DEALER_BUSTED;
         } else if (playerHand.beats(dealerHand)) {
-            return "You beat the Dealer! 💵";
+            return GameOutcome.PLAYER_BEATS_DEALER;
         } else if (playerHand.pushes(dealerHand)) {
-            return "Push: Nobody wins, we'll call it even.";
+            return GameOutcome.PLAYER_PUSHES;
         } else {
-            return "You lost to the Dealer. 💸";
+            return GameOutcome.PLAYER_LOSES;
         }
     }
 
