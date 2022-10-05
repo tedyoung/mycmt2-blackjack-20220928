@@ -8,7 +8,7 @@ public class BlackjackController {
 
     @PostMapping("/start-game")
     public String startGame() {
-        return "blackjack";
+        return "redirect:/";
     }
 
 }
