@@ -21,23 +21,23 @@ public class StubDeck extends Deck {
     }
 
 
-    static StubDeck playerHitsAndGoesBust() {
+    public static StubDeck playerHitsAndGoesBust() {
         return new StubDeck(Rank.TEN, Rank.EIGHT,
                             Rank.QUEEN, Rank.JACK,
                             Rank.THREE);
     }
 
-    static StubDeck playerStandsAndBeatsDealer() {
+    public static StubDeck playerStandsAndBeatsDealer() {
         return new StubDeck(Rank.TEN, Rank.EIGHT,
                             Rank.QUEEN, Rank.JACK);
     }
 
-    static StubDeck playerDealtBlackjack() {
+    public static StubDeck playerDealtBlackjack() {
         return new StubDeck(Rank.TEN, Rank.EIGHT,
                             Rank.ACE, Rank.JACK);
     }
 
-    static StubDeck playerNotDealtBlackjack() {
+    public static StubDeck playerNotDealtBlackjack() {
         return new StubDeck(Rank.TEN, Rank.EIGHT,
                             Rank.NINE, Rank.JACK);
     }
