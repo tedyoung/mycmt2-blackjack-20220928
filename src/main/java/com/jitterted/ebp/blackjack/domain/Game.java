@@ -16,6 +16,9 @@ public class Game {
     public void initialDeal() {
         dealRoundOfCards();
         dealRoundOfCards();
+        if (playerHand.isBlackjack()) {
+            playerDone = true;
+        }
     }
 
     private void dealRoundOfCards() {
