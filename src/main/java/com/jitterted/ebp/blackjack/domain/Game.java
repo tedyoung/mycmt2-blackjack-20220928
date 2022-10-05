@@ -28,6 +28,8 @@ public class Game {
     }
 
     public GameOutcome determineOutcome() {
+        // enforce: playerDone must be true for this to be allowed to be called
+        // also: dealer must have taken their turn (if appropriate)
         if (playerHand.isBusted()) {
             return GameOutcome.PLAYER_BUSTED;
         } else if (dealerHand.isBusted()) {
@@ -77,6 +79,7 @@ public class Game {
     }
 
     public void playerHits() {
+        // enforce protocol: can't call this method if playerDone == true
         playerHand.drawFrom(deck);
         playerDone = playerHand.isBusted();
     }

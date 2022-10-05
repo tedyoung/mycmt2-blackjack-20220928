@@ -42,6 +42,12 @@ public class StubDeck extends Deck {
                             Rank.NINE, Rank.JACK);
     }
 
+    public static StubDeck playerHitsDoesNotBust() {
+        return new StubDeck(Rank.TEN, Rank.EIGHT,
+                            Rank.SEVEN, Rank.JACK,
+                            Rank.THREE);
+    }
+
     @Override
     public Card draw() {
         return iterator.next();
