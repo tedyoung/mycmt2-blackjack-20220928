@@ -38,4 +38,12 @@ public class WebIntegrationTest {
         mockMvc.perform(post("/hit"))
                .andExpect(status().is3xxRedirection());
     }
+
+    @Test
+    public void getRequestToDoneEndpointIsStatus200Ok() throws Exception {
+        mockMvc.perform(get("/done"))
+               .andExpect(status().isOk());
+    }
+
+
 }
