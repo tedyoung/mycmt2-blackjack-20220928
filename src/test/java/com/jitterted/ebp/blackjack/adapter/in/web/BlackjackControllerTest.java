@@ -77,5 +77,22 @@ class BlackjackControllerTest {
                 .isEqualTo("redirect:/done");
     }
 
+    @Test
+    public void donePageShowsFinalGameStateWithOutcome() throws Exception {
+        Game game = new Game(StubDeck.playerStandsAndBeatsDealer());
+        BlackjackController blackjackController = new BlackjackController(game);
+        blackjackController.startGame();
+        Model model = new ConcurrentModel();
+
+        blackjackController.doneView(model);
+
+        assertThat(model.containsAttribute("gameView"))
+                .isTrue();
+
+        String outcome = (String) model.getAttribute("outcome");
+
+        assertThat(outcome)
+                .isNotBlank();
+    }
 }
 
