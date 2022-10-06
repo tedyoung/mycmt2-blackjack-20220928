@@ -1,8 +1,13 @@
 package com.jitterted.ebp.blackjack.adapter.in.web;
 
+import com.jitterted.ebp.blackjack.domain.Deck;
+import com.jitterted.ebp.blackjack.domain.Game;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -51,5 +56,14 @@ public class WebIntegrationTest {
                .andExpect(status().is3xxRedirection());
     }
 
+    @TestConfiguration
+    static class GameTestConfiguration {
+        @Primary
+        @Bean
+        public Game createTestGame() {
+            return new Game(new Deck());
+        }
+    }
 
 }
+
