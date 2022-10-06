@@ -92,6 +92,7 @@ public class Game {
         // enforce protocol: can't call this method if playerDone == true
         playerHand.drawFrom(deck);
         playerDone = playerHand.isBusted();
+        gameMonitor.roundCompleted(this);
     }
 
     public void playerStands() {
