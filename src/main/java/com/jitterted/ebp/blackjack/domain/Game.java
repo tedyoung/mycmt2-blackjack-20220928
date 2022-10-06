@@ -86,6 +86,7 @@ public class Game {
 
     public void playerStands() {
         playerDone = true;
+        dealerTurn();
     }
 
 }

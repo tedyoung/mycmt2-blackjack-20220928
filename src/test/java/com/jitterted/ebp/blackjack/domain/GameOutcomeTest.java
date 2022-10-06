@@ -51,4 +51,21 @@ class GameOutcomeTest {
                 .isFalse();
     }
 
+
+    @Test
+    public void standResultsInDealerDrawingCardOnTheirTurn() throws Exception {
+        Deck dealerBeatsPlayerAfterDrawingAdditionalCardDeck =
+                new StubDeck(Rank.TEN, Rank.QUEEN,
+                             Rank.NINE, Rank.FIVE,
+                             Rank.SIX);
+        Game game = new Game(dealerBeatsPlayerAfterDrawingAdditionalCardDeck);
+        game.initialDeal();
+
+        game.playerStands();
+
+        assertThat(game.dealerHand().cards())
+                .hasSize(3);
+    }
+
+
 }
